@@ -19,6 +19,21 @@
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+            <!-- Standard Conditional Logic -->
+            <!-- <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p> -->
+
+            <!-- Alternative way of showing -->
+            <!-- Note: Will be hidden if false --> 
+            <!-- <p v-show>In Stock</p> -->
+
+            <!-- Chained Conditional Logic -->
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+            <p v-else>Out of Stock</p>
+
+            <!-- Code Challenge -->
+            <p v-show="onSale">On Sale!</p>
           </div>
         </div>
       </div>
