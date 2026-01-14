@@ -11,6 +11,10 @@
   <body>
     <div id="app">
       <div class="nav-bar"></div>
+      
+      <!-- Code Challenge -->
+      <img :class="{ 'out-of-stock-img': !inStock }" 
+        :src="image">
 
       <div class="cart">Cart({{ cart }})</div>
       
@@ -38,7 +42,6 @@
             <button 
               class="button" 
               :class="{ disabledButton: !inStock }"
-              :class="{ out-of-stock-img: !inStock }"
               :disabled="!inStock"
               @click="addToCart">
               Add to Cart
