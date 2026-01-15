@@ -8,7 +8,7 @@ const app = Vue.createApp({
             selectedVariant: 0,
             url: 'https://www.vuemastery.com/courses/intro-to-vue-3/class-and-style-binding-vue3',
             inventory: 8,
-            onSale: false,
+            onSale: true,
             details: ['50% cotton', '30% wool', '20% polyester'],
             sizes: ['S', 'M', 'L', 'XL'],
             variants: [
@@ -41,11 +41,11 @@ const app = Vue.createApp({
             return this.variants[this.selectedVariant].quantity
         },
         sale() {
-            if (this.onSale === true) {
-                return this.title() + ' is on sale!'
+            if (this.onSale) {
+                return this.title + ' is on sale!'
             }
             else {
-                return this.title()
+                return this.title
             }
         }
     }
