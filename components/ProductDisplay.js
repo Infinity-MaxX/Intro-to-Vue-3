@@ -19,9 +19,9 @@ app.component('product-display', {
             <p v-else>Out of Stock</p>
 
             <p>Shipping: {{ shipping }}</p>
-            <ul>
-              <product-details :details="details"></product-details>
-            </ul>
+            <!-- Code Challenge -->
+            <product-details :details="details"></product-details>
+            <!-- Code Challenge -->
 
             <div 
               v-for="(variant, index) in variants" 
