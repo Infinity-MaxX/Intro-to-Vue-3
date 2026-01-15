@@ -5,16 +5,15 @@ const app = Vue.createApp({
             product: 'Socks',
             brand: 'Vue Mastery',
             description: 'Warm socks for your feet.',
-            image: './assets/images/socks_blue.jpg',
+            selectedVariant: 0,
             url: 'https://www.vuemastery.com/courses/intro-to-vue-3/class-and-style-binding-vue3',
-            inStock: false,
             inventory: 8,
             onSale: false,
             details: ['50% cotton', '30% wool', '20% polyester'],
             sizes: ['S', 'M', 'L', 'XL'],
             variants: [
-                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
-                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
+                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 },
             ],
         }
     },
@@ -27,8 +26,27 @@ const app = Vue.createApp({
                 this.cart -= 1
             }
         },
-        updateImage(variantImage) {
-            this.image = variantImage
+        updateVariant(index) {
+            this.selectedVariant = index
+        }
+    },
+    computed: {
+        title() {
+            return this.brand + ' ' + this.product
+        },
+        image() {
+            return this.variants[this.selectedVariant].image
+        },
+        inStock() {
+            return this.variants[this.selectedVariant].quantity
+        },
+        sale() {
+            if (this.onSale === true) {
+                return this.title() + ' is on sale!'
+            }
+            else {
+                return this.title()
+            }
         }
     }
 })
