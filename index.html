@@ -17,8 +17,10 @@
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
+            <!-- Code Challenge -->
             <img :class="{ out-of-stock-img: !inStock }" 
-              :src="image">
+              v-bind:src="image">
+            <!-- Code Challenge -->
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
