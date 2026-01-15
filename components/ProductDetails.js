@@ -1,6 +1,7 @@
-app.component('product-display', {
+// Code Challenge
+app.component('product-details', {
   props: {
-      premium: {
+      details: {
           type: Array,
           required: true
       }
