@@ -16,6 +16,10 @@ app.component('review-list', {
                 {{ review.name }} gave this {{ review.rating }} stars
                 <br/>
                 "{{ review.review }}"
+                <br/>
+                <!-- Code Challenge -->
+                {{ review.name }}
+                <!-- Code Challenge -->
             </li>
         </ul>
     </div>
