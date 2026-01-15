@@ -18,7 +18,7 @@ app.component('review-list', {
                 "{{ review.review }}"
                 <br/>
                 <!-- Code Challenge -->
-                {{ review.name }}
+                Recommended: {{ review.recommend }}
                 <!-- Code Challenge -->
             </li>
         </ul>
